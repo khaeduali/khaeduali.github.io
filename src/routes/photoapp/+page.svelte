@@ -47,6 +47,8 @@ let image = [
     min-height: 300px;
     width: 100%;
     border-radius: 20px;
+    border: 2px dashed #b4befe;
+    box-shadow: 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .photos {
@@ -59,12 +61,15 @@ let image = [
 }
 
 h1 {
-    margin: auto;
+    margin: 20px;
     color: #74c7ec;
     font-family: courier;
     display: auto;
     text-align: center;
     font-size: 3em;
     font-weight: bolder;
+    background-color: #11111b;
+    border-radius: 20px;
+    text-shadow:4px 8px 0px rgba(0,0,0,0.2);
 }
 </style>

@@ -67,6 +67,9 @@ h3 {
 }
 
 .name {
+    border-radius: 20px;
+    border: 10px solid #11111b;
+    background-color: #11111b;
     font-size: 50px;
 }
 

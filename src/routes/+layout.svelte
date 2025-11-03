@@ -44,11 +44,13 @@ let {
 
 nav {
     margin: auto;
+    width: 99vw;
+	border-radius: 20px;
     background-color: #11111b;
-    width: 100vw;
     height: 10vh;
     top: 97vh;
     position: fixed;
+	text-align: center;
     z-index: 1000;
 }
 
@@ -57,6 +59,7 @@ a {
     font-family: courier;
     font-weight: bolder;
     margin: auto;
+	padding-right: 40px;
     font-size: 1.5em;
 }
 </style>
