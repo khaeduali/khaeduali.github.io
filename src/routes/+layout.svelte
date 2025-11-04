@@ -56,12 +56,23 @@ nav {
 
 a {
     color: #cba6f7;
+  	text-shadow: 0px 0px 4px  #cba6f799;
+	
     font-family: courier;
     font-weight: bolder;
     margin: auto;
 	padding-right: 40px;
     font-size: 1.5em;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 </style>
 
 <svelte:head>

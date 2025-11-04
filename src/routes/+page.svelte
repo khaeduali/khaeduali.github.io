@@ -15,7 +15,7 @@
         <br>
         <br>
         <p id="inspo">
-            "The only way to learn a new programming language is by writing programs in it." - <strong>Dennis Ritchie</strong>, creator of the C programming language.
+            "The only way to learn a new programming language is by writing programs in it." <br>- <strong>Dennis Ritchie</strong>,<sub>creator of the C programming language.</sub><br>
         </p>
 
         <br>
@@ -71,6 +71,7 @@ h3 {
     border: 10px solid #11111b;
     background-color: #11111b;
     font-size: 50px;
+    text-shadow: 0px 0px 4px #74c7ecaa;
 }
 
 #inspo {
@@ -94,6 +95,15 @@ p {
     font-family: courier;
     display: inline;
     /*Ger utrymme mellan element*/
-    margin: 10px;
+    margin-top: 20px;
+}
+
+p sub {
+    opacity: 0.5;
+    font-size: small;
+}
+
+p strong {
+    text-shadow: 0px 0px 4px #74c7ec72;
 }
 </style>
