@@ -18,13 +18,11 @@ let {
     display: inline;
     position: fixed;
     z-index: 100;
-    top: 43vw;
-    left: 0;
-    width: 110vw;
-    transform: translate(-100px, 0px) !important;
-    transition: all 0.5s;
+    top: 83vh;
+	transform: scaleX(4);
+	height: 160px;
+    transition: height 0.5s;
     transition-delay: 0.2s;
-    height: 350px;
 }
 
 .waves:hover {
