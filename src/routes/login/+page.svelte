@@ -44,7 +44,9 @@ function handleSubmit() {
 
 <main>
     <div class="container">
-        <h1>Inloggning</h1>
+    <div class="container_offshoot" style="margin-top:-35vh; left: -1%;">
+        <h1>Inloggning</h1>   
+    </div>
         <form class="formulär" on:submit|preventDefault={handleSubmit}>
             <label for="email">E-Mail</label>
             <input type="email" id="email"  bind:value={email}>
@@ -74,10 +76,10 @@ main {
     width: 35%;
     min-width: 370px;
     height: 20%;
-    min-height: 410px;
+    min-height: 210px;
     background-color: #1e1e2e;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     left: 30vw;
     display: flex;
     flex-direction: column;
@@ -90,7 +92,7 @@ main {
     border-radius: 10px;
     width: 100%;
     height: 5%;
-    min-height: 60px;
+    min-height: 70px;
     background-color: #1e1e2e;
     margin: auto;
     margin-top: 60vh;

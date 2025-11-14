@@ -73,7 +73,9 @@ function handleSubmit() {
 
 <main>
     <div class="container">
-        <h1>Registrering</h1>
+    <div class="container_offshoot" style="margin-top:-52vh; left: -1%;">
+        <h1>Registrering</h1>   
+    </div>
         <form class="formulär" on:submit|preventDefault={handleSubmit}>
             <label for="name">Namn</label>
             <input type="text" id="name"  bind:value={username}>
@@ -117,12 +119,12 @@ main {
     border-radius: 10px;
     width: 35%;
     min-width: 370px;
-    height: 50%;
-    min-height: 410px;
+    height: 40%;
+    min-height: 260px;
     background-color: #1e1e2e;
     margin: auto;
     left: 30%;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 5%;
     display: flex;
     flex-direction: column;
@@ -136,7 +138,7 @@ main {
     border-radius: 10px;
     height: 5%;
     width: 100%;
-    min-height: 60px;
+    min-height: 70px;
     background-color: #1e1e2e;
     margin: auto;
     margin-top: 65vh;
