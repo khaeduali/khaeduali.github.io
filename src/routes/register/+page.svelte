@@ -98,7 +98,9 @@ function handleSubmit() {
             <input type="submit" value="Registrera" style="font-family: courier;">
         </form>
 
+    <div class="container_offshoot">
         <sub>Har du redan ett konto? <a href="/login">Logga in!</a></sub>
+    </div>
     </div>
 </main>
 
@@ -115,16 +117,34 @@ main {
     border-radius: 10px;
     width: 35%;
     min-width: 370px;
-    height: 70%;
+    height: 50%;
     min-height: 410px;
     background-color: #1e1e2e;
     margin: auto;
+    left: 30%;
     margin-top: 5%;
     margin-bottom: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
+    position: absolute;
+}
+
+.container_offshoot {
+    border: solid 5px #74c7ec;
+    border-radius: 10px;
+    height: 5%;
+    width: 100%;
+    min-height: 60px;
+    background-color: #1e1e2e;
+    margin: auto;
+    margin-top: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    position: absolute;
 }
 
 label {
@@ -155,6 +175,12 @@ input {
     text-align: center;
     border-radius: 16px;
     z-index: 2;
+    scale: 1;
+    transition: scale 0.2s;
+}
+
+input:hover{
+    scale: 1.1;
 }
 
 #col {
@@ -168,6 +194,12 @@ input {
     text-align: center;
     border-radius: 16px;
     z-index: 2;
+    scale: 1;
+    transition: scale 0.2s;
+}
+
+#col:hover {
+    scale: 1.1;
 }
 
 h1,
@@ -175,10 +207,6 @@ sub {
     color: #74c7ec;
     margin-left: auto;
     margin-right: auto;
-}
-
-sub {
-    opacity: 0.8;
 }
 
 h1,

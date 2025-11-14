@@ -54,8 +54,9 @@ function handleSubmit() {
             <p></p>
             <input type="submit" value="Logga in" style="font-family: courier;">
         </form>
-
+    <div class="container_offshoot">
         <sub>Ny här? <a href="/register">Registrera!</a></sub>
+    </div>
     </div>
 </main>
 
@@ -72,16 +73,32 @@ main {
     border-radius: 10px;
     width: 35%;
     min-width: 370px;
-    height: 40%;
+    height: 20%;
     min-height: 410px;
     background-color: #1e1e2e;
     margin: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 10%;
+    left: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
+    position:absolute;
+}
+.container_offshoot {
+    border: solid 5px #b4befe;
+    border-radius: 10px;
+    width: 100%;
+    height: 5%;
+    min-height: 60px;
+    background-color: #1e1e2e;
+    margin: auto;
+    margin-top: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    position:absolute;
 }
 
 label {
@@ -112,19 +129,12 @@ input {
     text-align: center;
     border-radius: 16px;
     z-index: 2;
+    scale: 1;
+    transition: scale 0.2s;
 }
 
-#col {
-    font-family: courier;
-    color: #b4befe;
-
-    background-color: #313244;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-radius: 16px;
-    z-index: 2;
+input:hover{
+    scale: 1.1;
 }
 
 h1,
@@ -132,10 +142,6 @@ sub {
     color: #b4befe;
     margin-left: auto;
     margin-right: auto;
-}
-
-sub {
-    opacity: 0.8;
 }
 
 h1,
