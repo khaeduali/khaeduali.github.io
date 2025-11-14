@@ -3,9 +3,13 @@ import {
     users_store
 } from "$lib/user";
 import {
+    redirect
+} from "@sveltejs/kit";
+import {
     goto
 } from '$app/navigation';
-let users = [];
+
+let users = []
 
 import {
     onMount
@@ -17,88 +21,41 @@ onMount(() => {
     }
 });
 
-let colors = [{
-    color: "blue",
-    name: "Blå"
-}, {
-    color: "red",
-    name: "Röd"
-}, {
-    color: "green",
-    name: "Grön"
-}, {
-    color: "black",
-    name: "Svart"
-}, {
-    color: "white",
-    name: "Vit"
-}, {
-    color: "purple",
-    name: "Lila"
-}, {
-    color: "pink",
-    name: "Rosa"
-}, {
-    color: "yellow",
-    name: "Gul"
-}]
-let color = "black"
-let username;
 let email;
 let pass;
-let date;
 
 function handleSubmit() {
-
-    let new_user = {
-        username: username,
+    let login_user = {
         password: pass,
-        email: email,
-        date: date,
-        color: color
-    };
+        email: email
+    }
 
-    if (pass.length < 8) {
-        alert("Lösenordet måste vara 8 karaktärer eller mer!")
-    } else if (users.filter(user => user.username === new_user.username).length > 0) {
-        alert("Användarnamnet finns redan!")
-    } else {
-        users = [...users, new_user];
-        $users_store = JSON.stringify(users);
-        alert("Välkommen " + username + "!")
+    let logged_users = users.filter(user => user.email == login_user.email && user.password == login_user.password);
+    if (email == undefined || pass == undefined || email == "" || pass == "") {
+        alert("Inget har blivit angivit!")
+    } else if (logged_users.length > 0) {
+        alert("Välkommen " + logged_users[0].username + "!")
         goto("/")
+    } else {
+        alert("Fel email eller lösenord!")
     }
 }
 </script>
 
 <main>
     <div class="container">
-        <h1>Registrering</h1>
+        <h1>Inloggning</h1>
         <form class="formulär" on:submit|preventDefault={handleSubmit}>
-            <label for="name">Namn</label>
-            <input type="text" id="name"  bind:value={username}>
-            <br>
-            <label for="birth">Födelsedatum</label>
-            <input type="date" id="birth" bind:value={date} >
-            <br>
             <label for="email">E-Mail</label>
             <input type="email" id="email"  bind:value={email}>
             <br>
             <label for="pass">Lösenord</label>
             <input type="password" id="pass"  bind:value={pass}>
-            <br>
-            <label for="col">Favoritfärg</label>
-            <select id="col" bind:value={color}>
-                {#each colors as c}
-                <option value={c.color}>{c.name}</option>
-                {/each}
-            </select>
-            <div style="width: 80%; height: 20px; border-radius: 16px; overflow:hidden; background-color:{color}; margin-left: auto; margin-right: auto; margin-top: -17px; z-index:0;">    </div>
             <p></p>
-            <input type="submit" value="Registrera" style="font-family: courier;">
+            <input type="submit" value="Logga in" style="font-family: courier;">
         </form>
 
-        <sub>Har du redan ett konto? <a href="/login">Logga in!</a></sub>
+        <sub>Ny här? <a href="/register">Registrera!</a></sub>
     </div>
 </main>
 
@@ -111,11 +68,11 @@ main {
 }
 
 .container {
-    border: solid 5px #74c7ec;
+    border: solid 5px #b4befe;
     border-radius: 10px;
     width: 35%;
     min-width: 370px;
-    height: 70%;
+    height: 40%;
     min-height: 410px;
     background-color: #1e1e2e;
     margin: auto;
@@ -140,7 +97,7 @@ label {
     width: auto;
     height: auto;
 
-    color: #74c7ec;
+    color: #b4befe;
     font-family: courier;
     text-align: center;
     z-index: 2;
@@ -172,7 +129,7 @@ input {
 
 h1,
 sub {
-    color: #74c7ec;
+    color: #b4befe;
     margin-left: auto;
     margin-right: auto;
 }
