@@ -54,7 +54,7 @@ function handleSubmit() {
             <label for="pass">Lösenord</label>
             <input type="password" id="pass"  bind:value={pass}>
             <p></p>
-            <input type="submit" value="Logga in" style="font-family: courier;">
+            <input id="submitbutton" type="submit" value="Logga in" style="font-family: courier;">
         </form>
     <div class="container_offshoot">
         <sub>Ny här? <a href="/register">Registrera!</a></sub>
@@ -123,8 +123,10 @@ label {
 }
 
 input {
-    background-color: #313244;
+    background-color: #181825;
     color: #b4befe;
+    border-color: #b4befe;
+    border-style: solid;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -137,6 +139,18 @@ input {
 
 input:hover{
     scale: 1.1;
+}
+
+
+#submitbutton {
+    margin-top: 2%;
+    font-size: 1em;
+    height: 40px;
+    font-weight: bolder;
+    background-color: #b4befe;
+    border-color: #181825;
+    color: #181825;
+    border-style: solid;
 }
 
 h1,

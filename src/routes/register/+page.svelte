@@ -97,7 +97,7 @@ function handleSubmit() {
             </select>
             <div style="width: 80%; height: 20px; border-radius: 16px; overflow:hidden; background-color:{color}; margin-left: auto; margin-right: auto; margin-top: -17px; z-index:0;">    </div>
             <p></p>
-            <input type="submit" value="Registrera" style="font-family: courier;">
+            <input id="submitbutton" type="submit" value="Registrera" style="font-family: courier;">
         </form>
 
     <div class="container_offshoot">
@@ -169,8 +169,11 @@ label {
 }
 
 input {
-    background-color: #313244;
-    color: #b4befe;
+    background-color: #181825;
+    color: #74c7ec;
+    border-color: #74c7ec;
+    border-style: solid;
+
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -187,9 +190,11 @@ input:hover{
 
 #col {
     font-family: courier;
-    color: #b4befe;
+    color: #74c7ec;
+    border-color: #74c7ec;
+    border-style: solid;
 
-    background-color: #313244;
+    background-color: #181825;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -202,6 +207,17 @@ input:hover{
 
 #col:hover {
     scale: 1.1;
+}
+
+#submitbutton {
+    margin-top: 2%;
+    font-size: 1em;
+    height: 40px;
+    font-weight: bolder;
+    background-color: #74c7ec;
+    border-color: #181825;
+    color: #181825;
+    border-style: solid;
 }
 
 h1,
