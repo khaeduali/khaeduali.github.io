@@ -59,11 +59,12 @@ function handleSubmit() {
 .container {
     background-color: #11111b;
     width: 60vw;
+    max-width: 500px;
     height: fit-content;
     border-radius: 20px;
     border: 2px solid #74c7ec;
     margin: auto;
-    margin-top: 2vh;
+    margin-top: 10vh;
 
     display: grid;
     grid-template-rows: 1fr 9fr 1fr;
@@ -140,6 +141,7 @@ input {
     scale: 1;
     transition: scale 0.2s;
 }
+
 
 input:hover{
     scale: 1.1;
