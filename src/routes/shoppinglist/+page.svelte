@@ -1,4 +1,5 @@
 <script>
+import { fade } from 'svelte/transition'
 let varor = $state([]);
 
 let addedElement = $state("");
@@ -10,7 +11,7 @@ function handleSubmit() {
             addedElement = ""
             return
         }
-        varor.push({name: addedElement, köpt: false})
+        varor.push({name: addedElement, köpt: false, priority: 0})
         addedElement = ""
     }
 }
@@ -26,9 +27,13 @@ function handleSubmit() {
                     {#each varor as vara}
                     {#if !vara.köpt}
                     <button type="button" on:click={() => vara.köpt = true}>˅</button>
+                    <div transition:fade>
+                    <input type="number" id="prio" bind:value={vara.priority} on:click={()=>varor.sort((a, b) => b.priority-a.priority)}>
                     <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
                         {vara.name}
                     </li>
+                    <div class="underline"></div>
+                    </div>
                     {/if}
                     {/each}
                 </ol>
@@ -44,9 +49,11 @@ function handleSubmit() {
                 <ul>
                     {#each varor as vara}
                     {#if vara.köpt}
+                    <div transition:fade>
                     <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
                         {vara.name}
                     </li>
+                    <div class="underline"></div></div>
                     {/if}
                     {/each}
                 </ul>
@@ -117,6 +124,14 @@ function handleSubmit() {
     color: #b4befe;
 }
 
+.categories_container section:nth-child(even) .underline {
+    background-color: #cba6f7;
+}
+
+.categories_container section:nth-child(odd) .underline {
+    background-color: #b4befe;
+}
+
 form {
     height: fit-content;
     position: absolute;
@@ -146,6 +161,14 @@ input {
 
 input:hover{
     scale: 1.1;
+}
+
+#prio {
+    color-scheme: dark;
+    width: 10%;
+    margin-top: 0;
+    left: 70%;
+    position: absolute;
 }
 
 
@@ -202,6 +225,13 @@ button {
 
 button:hover {
     scale: 1;
+}
+
+.underline {
+    height: 2px;    
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 2px;
 }
 
 h1,
