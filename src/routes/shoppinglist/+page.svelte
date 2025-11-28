@@ -121,6 +121,7 @@ form {
     height: fit-content;
     position: absolute;
     bottom: 10px;
+    left: 18%;
 }
 
 input {
