@@ -1,5 +1,7 @@
 <script>
-import { fade } from 'svelte/transition'
+import {
+    fade
+} from 'svelte/transition'
 let varor = $state([]);
 
 let addedElement = $state("");
@@ -11,7 +13,11 @@ function handleSubmit() {
             addedElement = ""
             return
         }
-        varor.push({name: addedElement, köpt: false, priority: 0})
+        varor.push({
+            name: addedElement,
+            köpt: false,
+            priority: 0
+        })
         addedElement = ""
     }
 }
@@ -28,20 +34,20 @@ function handleSubmit() {
                     {#if !vara.köpt}
                     <button type="button" on:click={() => vara.köpt = true}>˅</button>
                     <div transition:fade>
-                    <input type="number" id="prio" bind:value={vara.priority} on:click={()=>varor.sort((a, b) => b.priority-a.priority)}>
-                    <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
-                        {vara.name}
-                    </li>
-                    <div class="underline"></div>
+                        <input type="number" id="prio" bind:value={vara.priority} on:click={()=>varor.sort((a, b) => b.priority-a.priority)}>
+                        <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
+                            {vara.name}
+                        </li>
+                        <div class="underline"></div>
                     </div>
                     {/if}
                     {/each}
                 </ol>
-                
-        <form class="formulär" on:submit|preventDefault={handleSubmit}>
-                <input type="text" id="items"  bind:value={addedElement}>
-                <input id="submitbutton" type="submit" value="Lägg till">
-        </form>
+
+                <form class="formulär" on:submit|preventDefault={handleSubmit}>
+                    <input type="text" id="items"  bind:value={addedElement}>
+                    <input id="submitbutton" type="submit" value="Lägg till">
+                </form>
             </section>
 
             <section>
@@ -50,10 +56,10 @@ function handleSubmit() {
                     {#each varor as vara}
                     {#if vara.köpt}
                     <div transition:fade>
-                    <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
-                        {vara.name}
-                    </li>
-                    <div class="underline"></div></div>
+                        <li  on:click={() => varor.splice(varor.indexOf(vara), 1)}>
+                            {vara.name}
+                        </li>
+                        <div class="underline"></div></div>
                     {/if}
                     {/each}
                 </ul>
@@ -158,8 +164,7 @@ input {
     transition: scale 0.2s;
 }
 
-
-input:hover{
+input:hover {
     scale: 1.1;
 }
 
@@ -170,7 +175,6 @@ input:hover{
     left: 70%;
     position: absolute;
 }
-
 
 ul,
 ol {
@@ -200,16 +204,16 @@ li {
     -ms-user-select: none;
 }
 
-li:hover{
+li:hover {
     margin-left: 10px;
-  	text-shadow: 0px 0px 4px  #ff0000;
+    text-shadow: 0px 0px 4px #ff0000;
     text-decoration: line-through;
     cursor: pointer;
 }
 
 button {
     margin-left: 75%;
-    display:inline;
+    display: inline;
     width: auto;
     height: auto;
     position: absolute;
@@ -217,7 +221,7 @@ button {
     border-color: #b4befe;
     color: #b4befe;
     border-style: solid;
-    border-radius: 8px;  
+    border-radius: 8px;
     scale: 0.85;
     transition: all 0.2s;
     font-weight: bolder;
@@ -228,7 +232,7 @@ button:hover {
 }
 
 .underline {
-    height: 2px;    
+    height: 2px;
     width: 80%;
     margin-bottom: 10px;
     border-radius: 2px;
