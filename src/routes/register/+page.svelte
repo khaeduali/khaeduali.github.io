@@ -11,7 +11,6 @@ import {
     onMount
 } from 'svelte';
 onMount(() => {
-    /*Check if has more then 2 characters*/
     if ($users_store.length > 2) {
         users = JSON.parse($users_store);
     }
