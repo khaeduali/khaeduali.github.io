@@ -10,6 +10,7 @@ let {
 <div class="bg2"></div>
 <nav>
 	<a href="/">Home</a>
+	<a href="/search">Search</a>
 	<a href="/login">Logga in</a>
 	<a href="/photoapp">Photo App</a>
 	<a href="/shoppinglist">Shoppinglista</a>
