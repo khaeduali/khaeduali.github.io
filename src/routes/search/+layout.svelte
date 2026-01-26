@@ -24,7 +24,7 @@ function handleSubmit(e) {
         if (searches.length > 5)
             searches.shift()
         sessionStorage.setItem("searches", JSON.stringify(searches))
-        }, 2000);
+        }, 1000);
     });
 }
 </script>
