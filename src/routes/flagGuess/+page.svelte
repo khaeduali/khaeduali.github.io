@@ -8,6 +8,7 @@ let guessedCorrectly = $state(0)
 let accuracy = $state(0)
 
 let lastFlag = $state("None")
+let lastGuess = $state("None")
 
 let flagDB
 
@@ -46,9 +47,10 @@ function handleSubmit() {
         guessedCorrectly++
 
     if (guessedCorrectly > 0 && guessAmt > 0)
-        accuracy = Math.floor(guessedCorrectly / guessAmt * 100)
+        accuracy = Math.floor(guessedCorrectly / guessAmt * 100) 
 
     lastFlag = flagDB[flagIndex].name
+    lastGuess = guess
     guess = ""
     initFlag()
 }
@@ -59,7 +61,9 @@ function handleSubmit() {
     <div class="bg2 bg"></div>  
 
     <div class="flag_container">
-        <p>{accuracy}% ({guessedCorrectly}/{guessAmt}) -- Last flag: {lastFlag}</p>
+        <p>{accuracy}% ({guessedCorrectly}/{guessAmt})</p>
+        <p>Last flag: {lastFlag}</p>
+        <p>You guessed: {lastGuess}</p>
         <img src={flagLink}>
     </div>
 
@@ -92,8 +96,8 @@ function handleSubmit() {
     width: 340px;
     height: 240px;
     margin: auto;
-    margin-top: 10%;
-    margin-bottom: 4%;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 
 .formulär {
