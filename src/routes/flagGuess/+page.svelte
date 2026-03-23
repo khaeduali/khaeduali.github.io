@@ -110,7 +110,9 @@ function handleSubmit() {
 
 img {
     width: 340px;
-    height: 240px;
+    height: auto;
+    max-height: 240px;
+    min-height: 120px;
     margin: auto;
 
     border: #fab387 4px solid;
