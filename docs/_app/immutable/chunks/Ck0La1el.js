@@ -1,1 +1,0 @@
-import"./DsnmJJEf.js";import"./69_IOA4Y.js";import{av as e,aw as o,ax as r}from"./Dm2I00kR.js";const s={title:"TEST",date:"2025-04-17"},{title:T,date:d}=s;var m=e("<h1>TEST</h1> <p>Test</p>",1);function f(t){var a=m();r(2),o(t,a)}export{f as default,s as metadata};

@@ -1,24 +1,31 @@
 <script>
-  /** @type {import('./$types').PageData} */
-  export let data;
+/** @type {import('./$types').PageData} */
+export let data;
 </script>
 
 <main>
-<article>
-  <h1 id="title">{data.title}</h1>
-  <p id="date">Published: {data.date}</p>
-  <svelte:component this={data.content} />
-</article>
+    <article>
+        <h1 id="title">{data.title}</h1>
+        <p id="date">Published: {data.date}</p>
+        <svelte:component this={data.content} />
+    </article>
 </main>
+<div id="spacer"></div>
 
 <style>
-
 main {
-  padding: 20px;
-  width: 75vw;
-  height: 75vh;
-  margin: auto;
-  display: flex;
+    padding: 20px;
+    width: 75vw;
+    height: fit-content;
+    margin: auto;
+    display: flex;
+}
+
+#spacer {
+    height: 300px;
+    width: 1px;
+    margin: auto;
+    display: flex;
 }
 
 div {
@@ -27,20 +34,19 @@ div {
 
 * {
     color: #74c7ec;
-    font-family: courier;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: inline;
     /*Ger utrymme mellan element*/
     margin-top: 20px;
 }
 
-
 #title {
-  font-size: 4em;
+    font-size: 4em;
 }
 
 #date {
-  margin-left: 40vw;
-  color: gray;
+    margin-left: 30vw;
+    color: gray;
 }
 
 p sub {

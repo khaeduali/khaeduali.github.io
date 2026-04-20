@@ -28,6 +28,11 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+img {
+    border-radius: 16px;
+}
+
 div {
     margin: auto;
 }

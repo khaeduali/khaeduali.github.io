@@ -1,8 +1,52 @@
 ---
-title: "TEST"
-date: "2025-04-17"
+title: "Devblogg #1"
+date: "2025-04-20"
 ---
 
-# TEST
+Nu har jag påbörjat arbetet på mitt skolprojekt "twopi", här är mitt första inlägg om projektets gång!
+## Återblick
+Det är bara början av projektet, så jag har inte haft nog med tid att göra särskilt mycket, men jag kunde ändå göra vissa viktiga saker.
 
-Test
+Till en början satte jag upp projektets struktur och dess repo, jag valde att separera projektet från min huvudsida (alltså den du är på just nu) för att ha bättre kontroll på projektet i sin helhet utan att bryta något från de äldre sidorna.
+
+Trots det har jag fortfarande valt att använda **SvelteKit** utan någon extern library såsom **Tailwind** för att jag kände att det var det jag var mest bekväm med att arbeta med...
+
+Med själva sidan satt upp testade jag olika visuella styler som någon sorts "mock up", och till slut landade på ett svart bakgrund med ett gult-ish sol mönster för layouten, och gav knapparna vissa hover effekter.
+
+[![Bgm3znR.md.png](https://iili.io/Bgm3znR.md.png)](https://freeimage.host/i/Bgm3znR)
+\\(layouten)
+
+Med tanke på tiden kunde jag säkert ha gjort mer men stegen som jag hann göra var ändå avgörande för resten av projektet.
+
+## Utmaningar
+Som sagt hade jag inte nog med tid att göra särskilt mycket, men jag hade ändå en stor utmaning med det jag hann göra.
+
+
+`sibling-count` och `sibling-index`.
+Det är tänkt att användaren ska kunna ändra knapparnas layout samt kunna ta bort och lägga till nya knappar, tanken var då att använda dessa två variablar i CSS med `offset` för att ordna dem i en cirkel oavsett deras mängd.
+
+(Koden för det var `offset: circle(320px) calc(100% * sibling-index() / sibling-count()) 0deg;`)
+
+Problemet som jag upptäckte var att `sibling-count` och `sibling-index` är nya features i CSS som har väldigt begränsad stöd i olika webbläsare. Själv använder jag Zen Browser vilket är baserat på Firefox, och Firefox har inget stöd för dessa variablar.
+
+Jag kunde bara ha arbetat på Chrome och visat projektet upp på Chrome utan att tänka på andra webbläsare men det kändes som fusk, så jag valde att försöka att fixa det.
+
+Mitt första försök involverade att göra cirkeln `nth-child` men det skulle inte fungera med en varierande mängd av knappar, OCH det skulle vara väldigt jobbigt att skriva.
+
+Jag ville verkligen inte göra det men till slut bestämde jag att skriva logiken för layouten i JavaScript.
+
+[![Bgpd1Tb.md.png](https://iili.io/Bgpd1Tb.md.png)](https://freeimage.host/i/Bgpd1Tb)
+
+Detta gör i princip samma sak som jag gjorde förut men får värdet av sibling count och index genom JS variabler som jag mnauellt sätter
+
+
+Totalt sett hade jag lärt mig att hitta alternativa lösningar för att göra sidan mer tillgänglig till andra användare, själva JavaScript stylningen har jag redan gjort i dåtida sidor men aldrig för samma syfte.
+
+## Sammanfattning
+Har arbetat med:
+- Sidans struktur
+- En enkel mockup
+- Vissa animationer
+- Dynamisk cirkel layout med stöd för alla moderna webbläsare
+
+Planen för nästa lektioner blir nog att skapa funktionalitet för knapparna på ett generellt sätt (alltså att visar grundläggande info och expanderar som widgets), och kanske även specifika funktionaliteten för en av knapparna, såsom tid eller väder.
