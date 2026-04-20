@@ -5,7 +5,7 @@
 
 
 <main>
-<h1>Devblog</h1>
+<h1>Blog</h1>
 
 <ul>
 	{#each data.posts as post}
