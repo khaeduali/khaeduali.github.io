@@ -1,0 +1,24 @@
+---
+title: "Devblogg #2"
+date: "2025-04-20"
+---
+
+## Återblick
+Sedan förra blogginlägget har jag påbörjat att implementera huvudfunktionaliteten för widgeterna. Jag lade till ett sätt för sidan att markera om en widget är öppen eller inte genom att skapa en variabel i JS som motsvarar widgetens index, om denna variabel är lika en widgets index och inte är -1 räknas just den widgeten som "öppen". 
+
+Att ha en array of booleans som kollade om varsin widget var öppen skulle också fungera men min plan är att det går endast att ha en widget öppen. Att öppna en widget gör man genom att trycka på den när den är oöppnad, jag har ännu inte lagt till ett sätt att stänga widgeten dock.
+
+När widgeternas kärnuppgifter var satta upp började jag att implementera de enkla widgeternas funktionalitet, jag hann endast med tid och väder. För tiden tog jag bara nytta av `date.now()` men för vädret valde jag att använda mig av https://open-meteo.com/ API:n på grund av dess simplicitet.
+
+[![BPVacyQ.md.png](https://iili.io/BPVacyQ.md.png)](https://freeimage.host/i/BPVacyQ)
+
+## Utmaningar
+Det fanns inget som var direkt utmanande med denna del av uppgiften. För väder API:n återanvände jag koden av Pokemon API:n från search uppgiften men jag ändrade den en bit så att den användes för en prerendered sida istället för en dynamisk sida som i Pokemon uppgiften. 
+
+## Sammanfattning
+Har arbetat med:
+- Widgeternas uppgifter
+- Tid widget
+- Väder widget
+
+Planen för nästa gång ändras inte, det är bara att fortsätta med de återstående widgeterna.
